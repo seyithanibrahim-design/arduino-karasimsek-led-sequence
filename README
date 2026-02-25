@@ -1,0 +1,30 @@
+# Arduino Knight Rider (Karaşimşek) LED Sequence
+
+This repository contains a dynamic LED sequencer project inspired by the iconic "Knight Rider" (Karaşimşek) effect. It demonstrates the use of arrays and loops to control multiple digital outputs efficiently.
+
+## Unique Feature: Dynamic Timing:
+Unlike standard sequences, this code implements a **variable delay effect**. The LEDs speed up or slow down as they move toward the edges, creating a more fluid and sophisticated visual experience.
+
+## Hardware Components
+* **Microcontroller:** Arduino Uno
+* **LEDs:** 5 Red LEDs (or any color of your choice)
+* **Resistors:** 5 x 330 Ohm (for LED protection)
+* **Breadboard & Jumper Wires**
+
+
+## Circuit Connections:
+* The LEDs are connected to digital **pins 3, 4, 5, 6, and 7**.
+* Each LED is connected in series with a 330 Ohm resistor to protect the components from overcurrent.
+
+## Logic & Code:
+The project utilizes an array to manage the pin numbers, making the code scalable and easy to read.
+
+```cpp
+int ledler[] = {3, 4, 5, 6, 7}; // LED pin array
+
+void setup() {
+  for(int i = 0; i < 5; i++) {
+    pinMode(ledler[i], OUTPUT);
+  }
+}
+// Logic includes forward and backward loops with dynamic delay
